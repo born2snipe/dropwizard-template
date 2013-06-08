@@ -1,0 +1,1 @@
+a dropwizard template project
