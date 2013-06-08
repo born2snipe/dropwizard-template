@@ -44,11 +44,11 @@ shadow {
     transformer(ServiceFileTransformer)
     exclude 'META-INF/*.DSA'
     exclude 'META-INF/*.RSA'
-    outputFile = new File('build/lib', 'dropwizard-template.jar')
+    outputFile = file("${buildDir}/lib/${project.name}.jar")
 }
 
 task runApp(type:Exec) {
-    commandLine "java -jar build/lib/dropwizard-template.jar local.yml".split(" ")
+    commandLine "java -jar ${buildDir}/lib/${project.name}.jar local.yml".split(" ")
 }
 
 runApp.dependsOn {
